@@ -14,8 +14,12 @@ Add the folder `Matheus` inside `/app/code/community/` and add the file `Matheus
 ## How to use
 After installation a new submenu named `Assign Categories` will be created at the menu `Catalog` in your admin panel. Click in it to enter the module's page. 
 
+![image](https://user-images.githubusercontent.com/55641441/120094412-8b826b00-c0f6-11eb-9925-06ea8e03e3c5.png)
 
-Now, you just need to upload your file and choose between `append` the new categories to the old ones or `replace` the old categories for the new ones.
+Now, you just need to upload your file and choose between `append` the new categories to the old ones or `replace` the old categories for the new ones and click in `Import`.
+
+![image](https://user-images.githubusercontent.com/55641441/120094418-9937f080-c0f6-11eb-8553-dbc62e4b2152.png)
+
 
 ## Append X Replace
 `Append new categories`: this option will assign the new categories without unassign the olds ones that were already assigned to that product.
