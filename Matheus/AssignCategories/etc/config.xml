@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<config>
+<modules>
+          <Matheus_AssignCategories>
+          <version>0.1.0</version>
+          </Matheus_AssignCategories>
+</modules>
+  
+<global>
+          <helpers>
+              <matheus_assigncategories>
+                  <class>Matheus_AssignCategories_Helper</class>
+              </matheus_assigncategories>
+          </helpers>
+          <blocks>
+              <matheus_assigncategories>
+                  <class>Matheus_AssignCategories_Block</class>
+              </matheus_assigncategories>
+          </blocks>
+</global>
+  
+<admin>
+          <routers>
+              <assigncategories_admin>
+              <use>admin</use>
+                  <args>
+                      <module>Matheus_AssignCategories</module>
+                      <frontName>assign_categories</frontName>
+                  </args>
+              </assigncategories_admin>
+          </routers>
+</admin>
+  
+</config>
+            

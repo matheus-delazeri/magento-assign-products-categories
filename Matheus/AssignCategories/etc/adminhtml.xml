@@ -1,0 +1,31 @@
+<config>
+    <menu>
+        <catalog>
+            <children>
+                <matheus_assigncategories translate="title" module="matheus_assigncategories">
+                    <title>Assign Categories</title>
+                    <sort_order>8</sort_order>
+                    <action>assign_categories/index/index</action>
+                </matheus_assigncategories>
+            </children>
+        </catalog>
+    </menu>
+    <acl>
+    <resources>
+        <all>
+            <title>Allow Everything</title>
+        </all>
+        <admin>
+            <children>
+                <catalog module="matheus_assigncategories" translate="title">
+                    <children>
+                        <set_time translate="title">
+                            <title>Assign Categories</title>
+                        </set_time>
+                    </children>
+                </catalog>  
+            </children>
+        </admin>
+    </resources>
+</acl>
+</config>    
