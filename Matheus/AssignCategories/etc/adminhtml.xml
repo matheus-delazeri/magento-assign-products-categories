@@ -19,9 +19,10 @@
             <children>
                 <catalog module="matheus_assigncategories" translate="title">
                     <children>
-                        <set_time translate="title">
+			 <matheus_assigncategories module="matheus_assigncategories" translate="title">
                             <title>Assign Categories</title>
-                        </set_time>
+			    <sort_order>20</sort_order>
+			 </matheus_assigncategories>
                     </children>
                 </catalog>  
             </children>
