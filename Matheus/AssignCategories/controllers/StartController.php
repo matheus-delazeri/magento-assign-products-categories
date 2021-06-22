@@ -10,16 +10,17 @@ class Matheus_AssignCategories_StartController extends Mage_Adminhtml_Controller
                   $this->tmpDir = __DIR__.'/../temp/categories.csv';
                   $sheetName = basename($_FILES['file_to_upload']['name']);
                   $excelFileType = strtolower(pathinfo($sheetName,PATHINFO_EXTENSION));
-                  try{
-                          move_uploaded_file($_FILES["file_to_upload"]["tmp_name"], $this->sheetDir);
-                  }catch(Exception $e){
-                          echo $e;
-                  }
+		  /** Material Icons */
+                  echo "<link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>";
+                  $this->error_icon = "<i class='material-icons' style='font-size:22px;color:red;vertical-align: bottom;'>error_outline</i>";
+                  $this->done_icon = "<i class='material-icons' style='font-size:22px;color:green;vertical-align: bottom;'>done</i>";
+                  $this->loading_icon = "<i class='material-icons' style='font-size:22px;vertical-align: bottom;'>schedule</i>";
+                  /** Process start */
                   if($excelFileType!='csv'){
-                          echo "<b>".date('H:i:s')." </b>Error: file format '".$excelFileType."' isn't accepted. You need to select a csv file.<br><br>";
+                          echo "<p>".$this->error_icon."<b> ".date('H:i:s')." </b>Error: file format '".$excelFileType."' isn't accepted. You need to select a csv file.</p>";
                   }
                   elseif(move_uploaded_file($_FILES["file_to_upload"]["tmp_name"], $this->tmpDir)){
-                          echo "<b>".date('H:i:s')." </b>Starting process...<br><br>";
+                          echo "<p>".$this->loading_icon."<b> ".date('H:i:s')." </b>Starting process...</p>";
 			  $this->assignCategories();
                   }
                   $this->deleteTmpFile();
@@ -51,7 +52,7 @@ class Matheus_AssignCategories_StartController extends Mage_Adminhtml_Controller
 				  $errorIndex += 1;
 			  }
 		  }
-		  echo "<b>".date('H:i:s')." </b>Importation complete. <b>".$successIndex."</b> products were assigned to their categories.<br><br>";
+		  echo "<p>".$this->done_icon."<b> ".date('H:i:s')." </b>Importation complete. <b>".$successIndex."</b> products were assigned to their categories.</p>";
 		  if($errorIndex != 0){
 			  $errorString = "{";
 			  foreach($errorLines as $line){
@@ -59,7 +60,7 @@ class Matheus_AssignCategories_StartController extends Mage_Adminhtml_Controller
 			  }
 			  $errorString = substr($errorString, 0, -1);
 			  $errorString .= "}";
-			  echo "<b>".date('H:i:s')," </b>The following rows had invalid skus or categories and were ignored: <b>".$errorString."</b>";
+			  echo "<p>".$this->error_icon."<b> ".date('H:i:s')," </b>The following rows had invalid skus or categories and were ignored: <b>".$errorString."</b></p>";
 		  }
 	}
 	private function categoryExists($categories){
