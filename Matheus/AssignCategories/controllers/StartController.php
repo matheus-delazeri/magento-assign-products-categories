@@ -12,6 +12,7 @@ class Matheus_AssignCategories_StartController extends Mage_Adminhtml_Controller
                   $excelFileType = strtolower(pathinfo($sheetName,PATHINFO_EXTENSION));
 		  /** Material Icons */
                   echo "<link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>";
+		  echo "<pre>";
                   $this->error_icon = "<i class='material-icons' style='font-size:22px;color:red;vertical-align: bottom;'>error_outline</i>";
                   $this->done_icon = "<i class='material-icons' style='font-size:22px;color:green;vertical-align: bottom;'>done</i>";
                   $this->loading_icon = "<i class='material-icons' style='font-size:22px;vertical-align: bottom;'>schedule</i>";
