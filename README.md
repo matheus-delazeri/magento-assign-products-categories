@@ -22,7 +22,7 @@ Now, you just need to upload your file and choose between `append` the new categ
 
 
 ## Append X Replace
-`Append new categories`: this option will assign the new categories without unassign the olds ones that were already assigned to that product.
+`Append new categories`: this option will assign the new categories without unassign the old ones that were already assigned to that product.
 
 
 `Replace existing categories`: this option will unassign the old categories from the product, leaving only the ones in the uploaded file assigned.
